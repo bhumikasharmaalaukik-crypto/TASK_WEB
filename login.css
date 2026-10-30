@@ -448,7 +448,7 @@ label {
 .icon--field {
   position: absolute;
   top: 50%;
-  left: 0.95rem;
+  right: 0.95rem;
   transform: translateY(-50%);
   color: var(--muted);
   pointer-events: none;
@@ -457,6 +457,53 @@ label {
 
 .input-wrap:focus-within .icon--field {
   color: var(--primary);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;  
+      
+  z-index: 1000;
+
+
+  display: grid;
+  place-items: center;
+
+  
+  
+  /* Increased button size */
+  
+  color: var(--text);
+  background: var(--bg);
+
+
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+  cursor: pointer;
+
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    transform var(--transition);
+}
+.theme-toggle .icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.theme-toggle:hover {
+  color: var(--primary);
+  transform: rotate(-15deg);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Fill the moon icon in dark mode */
+:root[data-theme="dark"] .theme-toggle .icon {
+  fill: currentColor;
 }
 
 .toggle-password {
