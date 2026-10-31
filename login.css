@@ -462,10 +462,10 @@ label {
 .theme-toggle {
   position: fixed;
   top: 16px;
-  left: 16px;  
-      
+  left: auto;
+  right:16px;
+    
   z-index: 1000;
-
 
   display: grid;
   place-items: center;
@@ -475,29 +475,25 @@ label {
   /* Increased button size */
   
   color: var(--text);
-  background: var(--bg);
 
-
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
   cursor: pointer;
 
   transition:
     color var(--transition),
-    background-color var(--transition),
+  
     transform var(--transition);
 }
 .theme-toggle .icon {
   width: 2.2rem;
-  height: 2.2rem;
+  height: 2.4rem;
 }
 
 .theme-toggle:hover {
   color: var(--primary);
-  transform: rotate(-15deg);
+  transform: rotate(-50deg);
 }
 
 .theme-toggle:focus-visible {
-  outline: 3px solid var(--primary);
   outline-offset: 2px;
 }
 
@@ -583,13 +579,18 @@ label {
 }
 
 .btn-submit {
+  display:block;
+  width:100%;
+  padding:1rem 1.5 rem;
   height: 3rem;
   font: inherit;
+  font-size:1.05rem;
+  margin-top:1.5 rem;
+  border-radius: 0.75rem;
   font-weight: 700;
   color: #fff;
   background: var(--primary);
   border: none;
-  border-radius: var(--radius);
   cursor: pointer;
   box-shadow: 0 8px 20px color-mix(in srgb, var(--primary) 35%, transparent);
   transition: background-color var(--transition), transform var(--transition),
@@ -669,4 +670,105 @@ label {
     animation: none !important;
     transition: none !important;
   }
+}login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0 18px;
+}
+
+.login-options .remember-row {
+    margin: 0;
+}
+
+.login-options a {
+    color: var(--purple-950);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #f0d6e3;
+}
+
+.google-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 16px;
+    border: 1px solid #ead8e3;
+    border-radius: 11px;
+    background: #fff;
+    color: var(--ink);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.google-btn:hover {
+    background: #fff7fb;
+    border-color: #e8a7c3;
+}
+
+.google-symbol {
+    font-size: 20px;
+    font-weight: 800;
+    color: #4285f4;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 48px;
+    margin-top: 12px;
+    padding: 12px 18px;
+
+    background: #ffffff;
+    color: #3c4043;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.google-btn:hover {
+    background: #f8faff;
+    box-shadow: 0 1px 3px rgba(60, 64, 67, 0.2);
+}
+
+.google-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
